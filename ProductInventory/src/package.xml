@@ -3,6 +3,7 @@
     <types>
         <members>Add_New_Product_Information</members>
         <members>Add_New_Product_InformationTest</members>
+        <members>de</members>
         <members>schemaObject</members>
         <name>ApexClass</name>
     </types>
