@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>Add_New_Product_Information</members>
+        <members>Add_New_Product_InformationTest</members>
+        <members>schemaObject</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
-        <name>ApexComponent</name>
-    </types>
-    <types>
-        <members>*</members>
+        <members>Add_New_Product</members>
+        <members>Display_Products</members>
+        <members>SingleProductInfo</members>
         <name>ApexPage</name>
     </types>
     <types>
-        <members>*</members>
+        <members>productTrigger</members>
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Product_Info__c</members>
+        <members>Purchase_Detail__c</members>
+        <members>Sales_Detail__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>ProductPageStyling</members>
         <name>StaticResource</name>
     </types>
     <version>36.0</version>
