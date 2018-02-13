@@ -1,0 +1,64 @@
+<apex:page controller="Course">
+    <style type="text/css">
+        .tableRecord { Background:#c2d2ed;padding:10px;font-size:15px;text-align:center; box-shadow:5px 5px 5px;}
+        .record:hover { Background: white; }
+        .tableClass { text-align:center;}
+        .textCenter{text-align:center;}
+
+    </style>
+    <apex:pageBlock >
+        <apex:form >
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!singleCourse.Name}" label="Student Name"/>
+                <apex:inputField value="{!singleCourse.CreditHrs__c}" label="Father Name"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection >
+                <apex:commandButton action="{!saveCourse}" value="save"/>
+                <apex:commandButton action="{!saveEditCourse}" value="update"/>
+            </apex:pageBlockSection>
+           
+        </apex:form>
+        
+    </apex:pageBlock>
+    
+    <apex:pageBlock >
+        <apex:form styleClass="tableRecord">
+            
+            <apex:dataTable value="{!courses}" var="course" id="theTable" rendered="true"
+    	 			rowClasses="odd,even" styleClass="tableClass" border="1" width="500" align="center">
+                <apex:facet name="caption"><p class="textCenter"></p></apex:facet>
+                <apex:facet name="header"><p class="textCenter">Students List</p></apex:facet>
+        
+        		<apex:column styleClass="record">
+                    <apex:facet name="header"><p class="textCenter">Course Name</p></apex:facet>
+            
+            	<apex:outputText value="{!course.Name}"/>
+        		</apex:column>
+        
+        		<apex:column styleClass="record">
+                    <apex:facet name="header"><p class="textCenter">Credit Hrs</p></apex:facet>
+            	<apex:outputText value="{!course.CreditHrs__c}" />
+        		</apex:column>
+                
+                
+        		<apex:column >
+                    <apex:commandLink action="{!getcourseForEdit}" value="Edit">
+                        <apex:param name="edit" assignTo="{!courseId}" value="{!course.Id}"/>
+                    </apex:commandLink>/
+                    <apex:commandLink action="{!delcourse}" value="Delete">
+                        <apex:param name="delete" assignTo="{!courseId}" value="{!course.Id}"/>
+                    </apex:commandLink>
+                    
+                    
+                    
+              
+                    
+        		</apex:column>    
+
+    		</apex:dataTable>
+        
+        </apex:form>
+        
+    </apex:pageBlock>
+</apex:page>

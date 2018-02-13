@@ -1,0 +1,24 @@
+<apex:page controller="Add_New_Product_Information">
+	<apex:stylesheet value="{!$Resource.ProductPageStyling}"/>
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!list_of_products}" var="product">
+            <apex:column value="{!product.Name}" headerValue="Product Name"/>
+            <apex:column value="{!product.purchase_price__c}" headerValue="Purchase Price"/>
+            <apex:column value="{!product.sale_price__c}" headerValue="Sale Price"/>
+            <apex:column value="{!product.product_quantity__c}" headerValue="Remaining Quantity"/>
+            <apex:column headerValue="Actions">
+                    
+            	<apex:commandLink action="{!productEdit}" value="Edit | ">
+                	<apex:param name="productEdit" assignTo="{!product_id}" value="{!product.Id}"/>
+                </apex:commandLink>
+                <apex:commandLink action="{!productDetailed}" value="Detail">
+                	<apex:param name="productDetail" assignTo="{!product_id}" value="{!product.Id}"/>
+                </apex:commandLink>
+                    
+        	</apex:column>
+        </apex:pageBlockTable>
+        
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

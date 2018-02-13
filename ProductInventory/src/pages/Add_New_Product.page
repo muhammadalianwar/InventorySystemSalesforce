@@ -1,0 +1,28 @@
+<apex:page controller="Add_New_Product_Information" >
+    <apex:stylesheet value="{!$Resource.ProductPageStyling}"/>
+	<apex:form >
+        <apex:messages />
+    	<apex:pageBlock title="Product Information">
+    		<apex:pageBlockSection title="Add New Product">
+                
+            	<apex:inputText id="productName" value="{!name}" label="Product Name"/><br/> 
+                <apex:inputText id="purchaseP" value="{!purchase_price_per_product}" label="Purchase Price"/><br/> 
+ 				<apex:inputText id="productsaleP" value="{!sale_price_per_product}" label="Sale Price"/><br/>
+                <apex:inputText id="productQuatity" value="{!product_quantity}" label="Quantity"/><br/> 
+			</apex:pageBlockSection>
+            
+            <apex:pageBlockButtons >
+            	<div draggable="false" >
+                    <apex:commandButton value="Save Record" action="{!addProductToDb}"/>
+                    <apex:commandButton value="Edit" action="{!saveUpdateProduct}"/>
+				</div>
+            </apex:pageBlockButtons>
+                
+            
+        </apex:pageBlock>
+    </apex:form>
+    <div class="footer">
+        
+    </div>
+
+</apex:page>

@@ -1,0 +1,4 @@
+<apex:page >
+    <apex:outputText >First Name: {! $User.FirstName}</apex:outputText>
+    <apex:outputText >Last Name: {! $User.LastName}</apex:outputText>
+</apex:page>

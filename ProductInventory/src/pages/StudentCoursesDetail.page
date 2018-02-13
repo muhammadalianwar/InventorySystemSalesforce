@@ -1,0 +1,6 @@
+<apex:page controller="StudentCourse">
+    <apex:pageBlock >
+        <apex:outputField value="{!stdCourse.Name}"/>
+        <apex:outputField value="{!stdCourse.Phone__c}"/>
+    </apex:pageBlock>
+</apex:page>

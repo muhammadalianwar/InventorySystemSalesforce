@@ -1,0 +1,9 @@
+<apex:page standardController="Product_Info__c">
+        <apex:pageBlock >
+            
+            <apex:pageBlock >
+                <apex:relatedList list="Purchase_Details__r" />
+			                
+            </apex:pageBlock>
+        </apex:pageBlock>
+</apex:page>
